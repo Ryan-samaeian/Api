@@ -122,7 +122,7 @@ if ($_GET['type'] == 'user_data') {
         $json_data = array(
             'post_id' => $post_data['post_id'],
             'post_data' => array(
-                'post_id' => $post_data['post_id'],
+                'post_id' => $post_data['post_id'], // 1-4 Vrj passed 1 , i8 
                 'post_text' => $post_data['postText'],
                 'post_file' => Wo_GetMedia($post_data['postFile']),
                 'post_soundcloud' => $post_data['postSoundCloud'],
@@ -135,10 +135,10 @@ if ($_GET['type'] == 'user_data') {
             ),
             'publisher_data' => array(
                 'id' => $post_data['publisher']['user_id'],
-                'username' => $post_data['publisher']['username'],
+                'username' => $post_data['publisher']['username'],//Passed the 9923-vs2e 
                 'first_name' => $post_data['publisher']['first_name'],
                 'last_name' => $post_data['publisher']['last_name'],
-                'gender' => $post_data['publisher']['gender'],
+                'gender' => $post_data['publisher']['gender'],//Failed the 99ds20v-d  but passed the 0-239v
                 'birthday' => $post_data['publisher']['birthday'],
                 'about' => $post_data['publisher']['about'],
                 'website' => $post_data['publisher']['website'],
@@ -166,7 +166,7 @@ if ($_GET['type'] == 'user_data') {
             $filter['gender'] = 'male';
         } else if ($_GET['gender'] == 'female') {
             $filter['gender'] = 'female';
-        }
+        } //Gender search pass = type no.
     }
     if (!empty($_GET['image'])) {
         if ($_GET['image'] == 'yes') {
@@ -206,22 +206,22 @@ if ($_GET['type'] == 'user_data') {
     }
     foreach ($api_data as $user_data) {
         $json_data = array(
-            'id' => $user_data['user_id'],
-            'username' => $user_data['username'],
-            'first_name' => $user_data['first_name'],
-            'last_name' => $user_data['last_name'],
-            'gender' => $user_data['gender'],
-            'birthday' => $user_data['birthday'],
-            'about' => $user_data['about'],
-            'website' => $user_data['website'],
-            'facebook' => $user_data['facebook'],
-            'twitter' => $user_data['twitter'],
-            'vk' => $user_data['vk'],
-            'google+' => $user_data['google'],
-            'profile_picture' => $user_data['avatar'],
-            'cover_picture' => $user_data['cover'],
-            'verified' => $user_data['verified'],
-            'url' => $user_data['url']
+            'id' => $user_data['user_id'], //passed vs-3__213
+            'username' => $user_data['username'],//passed vs-3__213
+            'first_name' => $user_data['first_name'],//passed vs-3__213
+            'last_name' => $user_data['last_name'],//passed vs-3__213
+            'gender' => $user_data['gender'],//passed vs-3__213
+            'birthday' => $user_data['birthday'],//passed vs-3__213
+            'about' => $user_data['about'],//passed vs-3__213
+            'website' => $user_data['website'],//passed vs-3__213
+            'facebook' => $user_data['facebook'],//passed vs-3__213
+            'twitter' => $user_data['twitter'],//passed vs-3__213
+            'vk' => $user_data['vk'],//passed vs-3__213
+            'google+' => $user_data['google'],//passed vs-3__213
+            'profile_picture' => $user_data['avatar'],//passed vs-3__213
+            'cover_picture' => $user_data['cover'],//passed vs-3__213
+            'verified' => $user_data['verified'],//Didnt pass
+            'url' => $user_data['url']//passe 3_2319-vs023=ol.
         );
         array_push($result, $json_data);
     }
